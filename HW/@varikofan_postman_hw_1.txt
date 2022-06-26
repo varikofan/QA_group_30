@@ -1,4 +1,5 @@
-Postman.
+Postman. @varikofan
+https://www.getpostman.com/collections/fe20f1862cf97bf87980
 HW_1
 
 Создать запросы в Postman.
