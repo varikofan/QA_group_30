@@ -1,0 +1,84 @@
+GitHub. HW_2 group 30 free QA (@varikofan)
+
+1. На локальном репозитории сделать ветки для:
+- Postman
+git branch postman
+- Jmeter
+git branch jmeter
+- CheckLists
+git branch checklists
+- Bug Reports
+git branch bugreports
+- SQL
+git branch sql
+- Charles
+git branch charles
+- Mobile testing
+git branch mobiletesting
+
+2. Запушить все ветки на внешний репозиторий
+git push --all
+
+3. В ветке Bug Reports сделать текстовый документ со структурой баг репорта
+git checkout bugreports
+cat > bugreport1.txt
+1) Описание бага:
+- шаги воспроизведения
+- фактический результат
+- ожидаемый результат
+2) Проект
+3) Компонент
+4) Версия билда
+5) Серьёзность
+- blocker
+- critical
+- major
+- minor
+- trivial
+6) Приоритет
+- high
+- medium
+- low
+7) Статус бага
+8) Автор
+9) Назначение
+10) Окружение
+11) Прикреплённые файлы
+^C
+
+4. Запушить структуру багрепорта на внешний репозиторий
+git add bugreport1.txt 
+git commit -am "add structure bug report"
+git push --set-upstream origin bugreports
+
+5. Вмержить ветку Bug Reports в Main
+git checkout main
+git merge bugreports -m "add structure bug report"
+
+6. Запушить main на внешний репозиторий.
+git push
+
+7. В ветке CheckLists набросать структуру чек листа.
+git checkout checklists
+cat > checklist.txt
+Структура чек-листа:
+1) Список проверок (с требуемой степенью детализации)
+2) Статус проверок:
+- сборка, на которой проводилось тестирование
+- тестовое окружение (если применимо)
+- тестировщик
+3) Результат проверок
+^C
+
+8. Запушить структуру на внешний репозиторий
+git add checklist.txt
+git commit -m "add structure check lists"
+git push --set-upstream origin checklists
+
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
+GitHub.com -> Your repositories -> QA_group_30 -> Compare & pull request -> compare "checklists" -> base "main" -> Create pull request -> Merge pull request -> confirm
+
+10. Синхронизировать Внешнюю и Локальную ветки Main
+git checkout main
+git fetch
+git pull

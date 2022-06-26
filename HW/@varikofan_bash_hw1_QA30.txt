@@ -1,0 +1,81 @@
+HW_1 group 30 free QA (@varikofan)
+
+1) посмотреть где я
+pwd
+
+2) создать папку
+mkdir papka1
+
+3) зайти в папку
+cd papka1
+
+4) создать 3 папки
+mkdir papka2 papka3 papka4
+
+5) зайти в любую папку
+cd papka2
+
+6) создать 5 файлов (3 txt, 2 json)
+touch file1.txt file2.txt file3.txt js1.json js2.json
+
+7) создать 3 папки
+mkdir papka5 papka6 papka7
+
+8) вывести список содержимого папки
+ls
+
+9) открыть любой txt файл
+vim file1.txt
+
+10) написать туда что-нибудь, любой текст
+text text text text
+
+11) сохранить и выйти
+Esc :wq
+
+12)выйти из папки на уровень выше
+cd ..
+
+13) переместить любые 2 файла, которые вы создали, в любую другую папку
+mv papka2/{file2.txt,file3.txt} ./
+
+14)скопировать любые 2 файла, которые вы создали, в любую другую папку.
+cp {file2.txt,file3.txt} ../
+
+15) найти файл по имени
+find . -name file2.txt
+
+16) просмотреть содержимое в реальном времени
+tail -f ~/QA/papka1/papka2/file1.txt
+
+17) вывести несколько первых строк из текстового файла
+head -n 3 ~/QA/papka1/papka2/file1.txt
+
+18) вывести несколько последних строк из текстового файла
+tail -n 3 ~/QA/papka1/papka2/file1.txt
+
+19) просмотреть содержимое длинного файла
+less ~/QA/papka1/papka2/file1.txt
+
+20) вывести дату и время
+date
+
+Задание *
+1) Отправить http запрос на сервер. (http://162.55.220.72:5005/terminal-hw-request)
+curl http://162.55.220.72:5005/terminal-hw-request
+curl "http://162.55.220.72:5005/get_method?name=Vlad&age=26"
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+touch script1
+vim script1
+#!/bin/bash
+cd papka1
+mkdir papka2 papka3 papka4
+cd papka2
+touch file1.txt file2.txt file3.txt js1.json js2.json
+mkdir papka5 papka6 papka7
+ls
+mv {file2.txt,file3.txt} ../
+:wq
+chmod +x ./script1
+./script1
